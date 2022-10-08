@@ -16,7 +16,7 @@ const AroundYou = () => {
     const fetchCountry = async () => {
       try {
         const { data } = await axios.get(
-          "https://geo.ipify.org/api/v2/country?apiKey=at_WT64yslcgZZJvNQrdaEHHY22st8fp"
+          `https://geo.ipify.org/api/v2/country?apiKey=${process.env.NEXT_PUBLIC_GEO_API_KEY}`
         );
         setCountry(data?.location?.country);
         setLoading(false);

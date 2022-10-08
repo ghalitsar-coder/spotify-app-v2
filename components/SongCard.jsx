@@ -19,7 +19,7 @@ const SongCard = ({ idx, song, isPlaying, activeSong, data }) => {
       <div className="relative w-full h-56 group ">
         <div
           className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex ${
-            activeSong.key === song.key
+            activeSong?.key === song?.key
               ? "flex bg-black bg-opacity-70"
               : "hidden"
           } `}
@@ -47,12 +47,12 @@ const SongCard = ({ idx, song, isPlaying, activeSong, data }) => {
         <p className=" text-sm text-gray-300 mt-1 ">
           <Link
             href={
-              song.artists
+              song?.artists
                 ? `/artist-details/${song?.artists[0]?.adamid}`
                 : "/top-artists"
             }
           >
-            {song.subtitle}
+            {song?.subtitle}
           </Link>
         </p>
       </div>
